@@ -10,6 +10,7 @@ The data model that you will be storing into MongoDB collection(s) are:
 
 
 User:
+
 user_id (System generated field) - {integer}
 
 email (Required) - {string}
@@ -23,6 +24,7 @@ created_at (System generated field) - {DateTime}
 updated_at (System generated field) - {DateTime}
 
 IDCard:
+
 card_id (System generated field) - {integer}
 
 card_name (Required) - {string}
@@ -33,6 +35,7 @@ expiration_date (Optional) - {Date}
 
 
 WebLogin:
+
 login_id (System generated field) - {integer}
 
 url (Required) - {string}
@@ -43,6 +46,7 @@ password (Required) - {string}
 
 
 BankAccount:
+
 ba_id (System generated field) - {integer}
 
 account_name (Optional) - {string}
@@ -55,21 +59,13 @@ account_number (Required) - {string}
 API's to be implemented:
 
 1.Create User
-
 Resource: /users
-
 Description: Add a new user to the digital wallet system.
-
 Request: 
-
 POST /users (with the following payload in the request body)
-
 HTTP Headers:
-
 Content-type: application/json
-
 Response:
-
 HTTP Code: 201
 
 
