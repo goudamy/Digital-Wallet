@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/scala"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.springsource.ide.eclipse.gradle.classpathcontainer"/>
+	<classpathentry kind="lib" path="C:/Users/goudamy/Downloads/spring-data-mongodb-1.6.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/goudamy/Downloads/joda-time-2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/goudamy/Downloads/casbah-alldep_2.10-2.7.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/goudamy/Downloads/gson-2.3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
