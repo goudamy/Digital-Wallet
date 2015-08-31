@@ -8,43 +8,70 @@ You will be storing digital wallet data--User, IDCard, WebLogin, and BankAccount
 This exampleÂ shows you how to persist a customer (similar to User) model into the database using Spring Data for MongoDB. If you dont want Spring Data, you can use any MongoDB client (JavaÂ or Scala) framework.
 The data model that you will be storing into MongoDB collection(s) are:
 
+
 User:
 user_id (System generated field) - {integer}
+
 email (Required) - {string}
+
 password (Required) - {string}
+
 name (Optional) {string}
+
 created_at (System generated field) - {DateTime}
+
 updated_at (System generated field) - {DateTime}
 
 IDCard:
 card_id (System generated field) - {integer}
+
 card_name (Required) - {string}
+
 card_number (Required) - {string}
+
 expiration_date (Optional) - {Date}
+
 
 WebLogin:
 login_id (System generated field) - {integer}
+
 url (Required) - {string}
+
 login (Required) - {string}
+
 password (Required) - {string}
+
 
 BankAccount:
 ba_id (System generated field) - {integer}
+
 account_name (Optional) - {string}
+
 routing_number (Required) - {string}
+
 account_number (Required) - {string}
+
 
 API's to be implemented:
 
 1.Create User
+
 Resource: /users
+
 Description: Add a new user to the digital wallet system.
+
 Request: 
+
 POST /users (with the following payload in the request body)
+
 HTTP Headers:
+
 Content-type: application/json
+
 Response:
+
 HTTP Code: 201
+
 
 2.View User
 Resource: /users/{user_id}
@@ -146,7 +173,7 @@ In the part II, you will learn how to consume a RESTful API from a client perspe
  routing_number: 121000358,
  account_number: 040834236
 }
-In the Create Bank Account API from the assignment 1, you will now be calling this routing number lookup API to valid user inputâ€™s routing numbers as well as fill in the optional account_name field with the customer_name field that you got from the response. So, you will be using the lookup API for the routing number validation and the customer name auto-population.
+In the Create Bank Account API from the assignment 1, you will now be calling this routing number lookup API to valid user inputs routing numbers as well as fill in the optional account_name field with the customer_name field that you got from the response. So, you will be using the lookup API for the routing number validation and the customer name auto-population.
 Suppose a routing_number user entered was 121000358. Then make HTTP GET call to this API:
 Request:
 GET https://www.routingnumbers.info/api/data.json?rn=121000358
