@@ -4,9 +4,10 @@ Digital wallet application
 Requirement:
 
 
-You will be storing digital wallet data--User, IDCard, WebLogin, and BankAccount--into MongoDB. Instead of installing and running your own instance on EC2, you can sign up for a free hosted MongoDB-as-a-Service account� at MongoLab. Of course, feel free to install a local instance on your dev machine, but you need to use a remote instance for final deployment.
-This example� shows you how to persist a customer (similar to User) model into the database using Spring Data for MongoDB. If you don’t want Spring Data, you can use any MongoDB client (Java� or Scala) framework. Your job is to store all data into MongoDB for all API operations that you implemented in the assignment 1.
+You will be storing digital wallet data--User, IDCard, WebLogin, and BankAccount--into MongoDB. Instead of installing and running your own instance on EC2, you can sign up for a free hosted MongoDB-as-a-Service accountÂ at MongoLab. Of course, feel free to install a local instance on your dev machine, but you need to use a remote instance for final deployment.
+This exampleÂ shows you how to persist a customer (similar to User) model into the database using Spring Data for MongoDB. If you donâ€™t want Spring Data, you can use any MongoDB client (JavaÂ or Scala) framework.
 The data model that you will be storing into MongoDB collection(s) are:
+
 User:
 user_id (System generated field) - {integer}
 email (Required) - {string}
@@ -105,7 +106,7 @@ HTTP Code: 200
 9.Delete Web Login
 Resource: /users/{user_id}/weblogins/{login_id}
 Description: Delete a web login from the wallet.
-Request:� 
+Request:Â 
 DELETE /users/{user_id}/weblogins/{login_id}
 Response:
 HTTP Code: 204
@@ -139,10 +140,10 @@ HTTP Code: 204
 Part II
 In the part II, you will learn how to consume a RESTful API from a client perspective.
 {
- routing_number�: 121000358�,
- account_number�: 040834236�
+ routing_number: 121000358,
+ account_number: 040834236
 }
-In the Create Bank Account API from the assignment 1, you will now be calling this routing number lookup API to valid user input’s routing numbers as well as fill in the optional “account_name” field with the “customer_name” field that you got from the response. So, you will be using the lookup API for the routing number validation and the customer name auto-population.
+In the Create Bank Account API from the assignment 1, you will now be calling this routing number lookup API to valid user inputâ€™s routing numbers as well as fill in the optional â€œaccount_nameâ€ field with the â€œcustomer_nameâ€ field that you got from the response. So, you will be using the lookup API for the routing number validation and the customer name auto-population.
 Suppose a routing_number user entered was 121000358. Then make HTTP GET call to this API:
 Request:
 GET https://www.routingnumbers.info/api/data.json?rn=121000358
@@ -165,8 +166,8 @@ routing_number: "121000358",
 institution_status_code: "1",
 zip: "23228"
 }
-Since the response code is 200, the routing number 121000358� is valid. For any invalid routing number, You will get a 404 code instead. Finally, take the customer_name field value (BANK OF AMERICA, N.A�) 
-and set it in the account_name� when you store a new bank account object in the database.
+Since the response code is 200, the routing number 121000358 is valid. For any invalid routing number, You will get a 404 code instead. Finally, take the customer_name field value (BANK OF AMERICA, N.A) 
+and set it in the account_name when you store a new bank account object in the database.
 You can use REST clients like Unirest or Spring REST Template.
 Example:
 Spring REST Template Example.
